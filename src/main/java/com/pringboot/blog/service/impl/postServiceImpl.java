@@ -18,8 +18,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class postServiceImpl implements PostService{
-    private PostRepository postRepository;
-    private ModelMapper mapper;
+    private final PostRepository postRepository;
+    private final ModelMapper mapper;
 
     public postServiceImpl(PostRepository postRepository, ModelMapper mapper) {
         this.postRepository = postRepository;
@@ -93,11 +93,11 @@ public class postServiceImpl implements PostService{
 
     private  PostDto mapToDto(Post newPost) {
         PostDto postDto = mapper.map(newPost, PostDto.class);
-//        PostDto postpostDto = new PostDto();
-//        postpostDto.setId(newPost.getId());
-//        postpostDto.setTitle(newPost.getTitle());
-//        postpostDto.setDescription(newPost.getDescription());
-//        postpostDto.setContent(newPost.getContent());
+//        PostDto postDto = new PostDto();
+//        postDto.setId(newPost.getId());
+//        postDto.setTitle(newPost.getTitle());
+//        postDto.setDescription(newPost.getDescription());
+//        postDto.setContent(newPost.getContent());
 
         return postDto;
     }
